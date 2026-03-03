@@ -1,0 +1,1 @@
+//aqui se debe de manejar la lógica de sólo mostrar una card

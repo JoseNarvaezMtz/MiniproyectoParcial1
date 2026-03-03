@@ -10,6 +10,10 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.0.0/dist/css/coreui.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/regalo.css" />
     <link rel="stylesheet" href="/css/cartas.css" />
@@ -192,15 +196,249 @@
 
         <div class="bow" id="bow">🎀</div>
 
-        <p class="hint">Abre el regalo para desbloquear la página</p>
+        <p class="hint">Estira el moño para abrir 🎁</p>
       </div>
     </section>
 
     <div id="scroll-anchor"></div>
 
     <!-- pagina principal -->
-    <section class="content hidden" id="content"></section>
+    <section class="content" id="content">
+      <!-- Card de bienvenida -->
+      <div class="card mb-3" style="max-width: 540px">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="#" class="img-fluid rounded-start" alt="..." />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card de bienvenida</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+              <div class="container-buttons d-flex justify-content-around">
+                <button class="btn btn-primary btn-siguiente">Siguiente</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <!-- card de Inicio de formulario -->
+      <div class="card" style="width: 18rem">
+        <img src="..." class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">¿Quién organiza el Intercambio?</h5>
+          <form>
+            <div class="mb-3">
+              <label for="label-nombre-organizador" class="form-label"
+                >Nombre del organizador</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="input-nombre-organizador"
+                placeholder="Mi nombre"
+                required
+              />
+            </div>
+            <div class="mb-3 form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="exampleCheck1"
+              />
+              <label class="form-check-label" for="label-participar-intercambio"
+                >Yo también participo en el intercambio</label
+              >
+            </div>
+            <div class="container-buttons d-flex justify-content-around">
+              <button class="btn btn-primary btn-anterior">Anterior</button>
+              <button class="btn btn-primary btn-siguiente">Siguiente</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- sección de agregar participante -->
+      <div class="container-agregar-participantes">
+        <!--probablemente toda la logica se maneje en este div -->
+        <div class="card" style="width: 18rem">
+          <img src="..." class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title text-center">Agregar Participante</h5>
+            <form>
+              <div class="mb-3">
+                <label for="label-nombre-participante" class="form-label"
+                  >Nombre:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="input-nombre-participante"
+                  placeholder="Ej. Rubén Cano"
+                  required
+                />
+              </div>
+              <button class="btn btn-primary btn-anterior mb-4">
+                Generar Exclusión
+              </button>
+              <div class="container-buttons d-flex justify-content-around">
+                <button class="btn btn-primary btn-anterior">Anterior</button>
+                <button class="btn btn-primary btn-terminar-participantes">
+                  Listo
+                </button>
+                <button class="btn btn-primary btn-siguiente">Siguiente</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Si le da a listo, se despliega esta advertencia -->
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">¿Estás seguro?</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <p>¿Terminaste de agregar a todos los participantes?</p>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    No, me faltó alguien
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Si, Siguiente
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- este div de abajo termina el container-participantes -->
+      </div>
+
+      <!-- aqui iría la idea de la festividad -->
+      <div class="card" style="width: 18rem">
+        <img src="..." class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title text-center">Selecciona el Evento</h5>
+          <form>
+            <div class="mb-3 d-flex justify-content-center">
+              <button class="btn btn-primary btn-anterior mb-4 mt-4">
+                ¡Elige la celebirdad!
+              </button>
+            </div>
+            <h6 class="card-title text-center">
+              Selecciona la fecha del evento
+            </h6>
+            <div class="container-calendario">
+              <div class="row">
+                <div class="col-sm-6 col-lg-5 mb-3 mb-sm-0">
+                  <div
+                    data-coreui-locale="en-US"
+                    data-coreui-toggle="date-picker"
+                  ></div>
+                </div>
+                <div class="col-sm-6 col-lg-5">
+                  <div
+                    data-coreui-date="2023/03/15"
+                    data-coreui-locale="en-US"
+                    data-coreui-toggle="date-picker"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div class="container-buttons d-flex justify-content-around">
+              <button class="btn btn-primary btn-anterior">Anterior</button>
+              <button class="btn btn-primary btn-siguiente">Terminar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Si le da a listo, se despliega esta advertencia -->
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Resúmen</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <p>Antes de ver el sorteo, ¿quieres ver el resumen?</p>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  No, Proceder al sorteo.
+                </button>
+                <button type="button" class="btn btn-primary">
+                  Si, Ver el resúmen.
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- si le da a ver el resúmen, se quita el bloqueo del scroll y manda hacia abajo a una table -->
+    <!-- En exclusión sería un botón que despliega un modal con los que tiene exclusión -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"># Participante</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Exclusión</th>
+          <th scope="col">Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>John</td>
+          <td>Doe</td>
+          <td>@social</td>
+        </tr>
+      </tbody>
+    </table>
     <!-- footer -->
     <footer class="container-footer">
       <section>
@@ -327,6 +565,8 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.0.0/dist/js/coreui.bundle.min.js"></script>
     <script src="/js/regalo.js"></script>
+    <script src="/js/cards.js"></script>
   </body>
 </html>

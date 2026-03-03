@@ -7,6 +7,9 @@ let startX = 0;
 let dragging = false;
 let opened = false;
 
+//bloquear scroll
+document.body.classList.add("lock-scroll");
+
 bow.addEventListener("pointerdown", (e) => {
   if (opened) return;
 
@@ -59,8 +62,7 @@ function openGift() {
       () => {
         intro.remove();
 
-        content.classList.remove("hidden");
-        content.classList.add("visible");
+        document.body.classList.remove("lock-scroll");
       },
       { once: true },
     );
