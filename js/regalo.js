@@ -8,6 +8,8 @@ let dragging = false;
 let opened = false;
 
 bow.addEventListener("pointerdown", (e) => {
+  if (opened) return;
+
   dragging = true;
   startX = e.clientX;
   bow.setPointerCapture(e.pointerId);
@@ -22,10 +24,16 @@ window.addEventListener("pointermove", (e) => {
 
   bow.style.transform = `translateX(calc(-50% + ${stretch}px)) scale(1.2)`;
 
-  if (Math.abs(stretch) > 100) openGift();
+  // Se abre solo una vez y bloquea drag inmediatamente
+  if (Math.abs(stretch) > 100) {
+    dragging = false;
+    openGift();
+  }
 });
 
 window.addEventListener("pointerup", () => {
+  if (opened) return;
+
   dragging = false;
   bow.classList.remove("dragging");
   bow.style.transform = "translateX(-50%)";
@@ -35,32 +43,26 @@ function openGift() {
   if (opened) return;
   opened = true;
 
+  // Desactivar eventos del bow
+  bow.style.pointerEvents = "none";
+
+  // Animación caja
   gift.style.transition = "0.6s ease";
   gift.style.transform = "scale(1.1)";
+  gift.style.opacity = "0";
 
   setTimeout(() => {
-    gift.style.opacity = "0";
-  }, 350);
+    intro.classList.add("closing");
 
-  setTimeout(() => {
-    gift.remove();
+    intro.addEventListener(
+      "animationend",
+      () => {
+        intro.remove();
 
-    // Mostrar bienvenida
-    content.classList.remove("hidden");
-    content.classList.add("visible");
-
-    // Scroll EXACTO
-    window.scrollTo({
-      top: content.offsetTop,
-      behavior: "smooth",
-    });
-
-    // Sacar intro del flujo sin romper layout
-    intro.style.position = "fixed";
-    intro.style.inset = "0";
-    intro.style.opacity = "0";
-    intro.style.pointerEvents = "none";
-
-    setTimeout(() => intro.remove(), 500);
-  }, 800);
+        content.classList.remove("hidden");
+        content.classList.add("visible");
+      },
+      { once: true },
+    );
+  }, 500);
 }

@@ -10,7 +10,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Intro */
 .intro {
   min-height: 100vh;
   display: grid;
@@ -30,7 +29,6 @@ body {
   border-radius: 12px;
 }
 
-/* Bow */
 .bow {
   font-size: 64px;
   position: absolute;
@@ -50,4 +48,23 @@ body {
   margin-top: 14px;
   font-size: 14px;
   opacity: 0.85;
+}
+
+.intro.closing {
+  animation: slideUpIntro 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes slideUpIntro {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(-40%);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
 }
