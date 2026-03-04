@@ -3,10 +3,18 @@
   min-height: 100vh;
   display: grid;
   place-items: center;
-  background: #111;
+  background: #000000;
   transition: all 0.8s ease;
 }
 
 body.lock-scroll {
   overflow: hidden;
+}
+
+#logo:hover {
+  background-image: url(media/logohover.png);
+}
+
+.navbar{
+  background-color: rgb(216, 246, 247);
 }

@@ -17,25 +17,26 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/regalo.css" />
     <link rel="stylesheet" href="/css/cartas.css" />
+    <link rel="stylesheet" href="/css/festividades.css" />
   </head>
   <body>
     <!-- header -->
     <header class="container-header">
-      <nav class="navbar navbar-light bg-light">
-        <div class="container py-3">
+      <nav class="navbar">
+        <div class="container py-5">
           <!-- Mobile Logo -->
           <a
             class="navbar-brand d-lg-none"
             href="https://library.livecanvas.com/sections/"
           >
             <img
-              src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg"
-              width="48"
-              height="48"
+              src="media/logo.png"
+              width="200"
+              height="110"
               class="align-middle me-1"
               alt="My Website"
             />
-            LiveCanvas
+            PSR Intercambios
           </a>
           <!-- end Mobile Logo-->
 
@@ -49,13 +50,13 @@
               href="https://library.livecanvas.com/sections/"
             >
               <img
-                src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg"
-                width="48"
-                height="48"
+                src="media/logo.png"
+                width="200"
+                height="200"
                 class="d-block mx-auto img-fluid"
                 alt="My Website"
-              />
-              LiveCanvas
+                id="logo"
+              />Intercambios Peluches Salvajes Rustificados
             </a>
           </div>
           <!-- end Desktop Logo-->
@@ -125,14 +126,22 @@
             class="offcanvas offcanvas-end shadow"
             tabindex="-1"
             id="navbarNavHamburger"
+            data-bs-backdrop="false"
             aria-labelledby="navbarNavHamburgerLabel"
           >
             <div class="offcanvas-header border-bottom">
               <div class="lc-block">
                 <div editable="rich">
-                  <h5 class="offcanvas-title" id="navbarNavHamburgerLabel">
-                    Menu
+                  <h5
+                    class="offcanvas-title text-center"
+                    id="navbarNavHamburgerLabel"
+                  >
+                    Bienvenido al menú de personalización!
                   </h5>
+                  <p class="mt-4 text-center">
+                    Aquí puedes cambiar el estílo de la página, además puedes
+                    seleccionar la celebridad con una temática única.
+                  </p>
                 </div>
               </div>
 
@@ -149,26 +158,17 @@
                   <div class="lc-block mb-4">
                     <div lc-helper="shortcode" class="live-shortcode me-auto">
                       <!--  lc_nav_menu -->
-                      <ul id="menu-menu-1" class="navbar-nav">
-                        <li
-                          class="menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-32739"
-                        >
-                          <a
-                            href="https://library.livecanvas.com/starters"
-                            class="nav-link"
-                            >BS5 Page Templates</a
-                          >
-                        </li>
-                        <li
-                          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home nav-item nav-item-32738"
-                        >
-                          <a
-                            href="https://library.livecanvas.com/sections/"
-                            class="nav-link"
-                            >BS5 Snippets</a
-                          >
-                        </li>
-                      </ul>
+                      <div class="container-festividades">
+                        <div class="parent">
+                          <div class="div1"><canvas></canvas></div>
+                          <div class="div2"><canvas></canvas></div>
+                          <div class="div3"><canvas></canvas></div>
+                          <div class="div4"><canvas></canvas></div>
+                          <div class="div5"><canvas></canvas></div>
+                          <div class="div6"><canvas></canvas></div>
+                        </div>
+                      </div>
+
                       <!-- /lc_nav_menu -->
                     </div>
                   </div>
@@ -196,7 +196,7 @@
 
         <div class="bow" id="bow">🎀</div>
 
-        <p class="hint">Estira el moño para abrir 🎁</p>
+        <p class="hint">Estira el moño para abrir el regalo!</p>
       </div>
     </section>
 
@@ -321,7 +321,7 @@
                   >
                     No, me faltó alguien
                   </button>
-                  <button type="button" class="btn btn-primary">
+                  <button type="button" class="btn btn-primary btn-siguiente">
                     Si, Siguiente
                   </button>
                 </div>
@@ -340,8 +340,12 @@
           <h5 class="card-title text-center">Selecciona el Evento</h5>
           <form>
             <div class="mb-3 d-flex justify-content-center">
-              <button class="btn btn-primary btn-anterior mb-4 mt-4">
-                ¡Elige la celebirdad!
+              <button
+                type="button"
+                class="btn btn-primary btn-anterior mb-4 mt-4"
+                id="btnCelebridad"
+              >
+                ¡Elige la celebridad!
               </button>
             </div>
             <h6 class="card-title text-center">
@@ -553,8 +557,7 @@
           lc-helper="background"
           style="
             height: 30vh;
-            background: url(https://images.unsplash.com/photo-1524260855046-f743b3cdad07?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1980&amp;h=768&amp;fit=crop&amp;ixid=eyJhcHBfaWQiOjM3ODR9)
-              center / cover no-repeat;
+            background: url(media/fondofooter.png) center / cover no-repeat;
             margin-top: -100px;
           "
         ></div>
@@ -568,5 +571,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.0.0/dist/js/coreui.bundle.min.js"></script>
     <script src="/js/regalo.js"></script>
     <script src="/js/cards.js"></script>
+    <script src="/js/Fondos.js"></script>
   </body>
 </html>
