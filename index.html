@@ -10,28 +10,33 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.0.0/dist/css/coreui.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/regalo.css" />
     <link rel="stylesheet" href="/css/cartas.css" />
+    <link rel="stylesheet" href="/css/festividades.css" />
   </head>
   <body>
     <!-- header -->
     <header class="container-header">
-      <nav class="navbar navbar-light bg-light">
-        <div class="container py-3">
+      <nav class="navbar">
+        <div class="container py-5">
           <!-- Mobile Logo -->
           <a
             class="navbar-brand d-lg-none"
             href="https://library.livecanvas.com/sections/"
           >
             <img
-              src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg"
-              width="48"
-              height="48"
+              src="media/logo.png"
+              width="200"
+              height="110"
               class="align-middle me-1"
               alt="My Website"
             />
-            LiveCanvas
+            PSR Intercambios
           </a>
           <!-- end Mobile Logo-->
 
@@ -45,13 +50,13 @@
               href="https://library.livecanvas.com/sections/"
             >
               <img
-                src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg"
-                width="48"
-                height="48"
+                src="media/logo.png"
+                width="200"
+                height="200"
                 class="d-block mx-auto img-fluid"
                 alt="My Website"
-              />
-              LiveCanvas
+                id="logo"
+              />Intercambios Peluches Salvajes Rustificados
             </a>
           </div>
           <!-- end Desktop Logo-->
@@ -121,14 +126,22 @@
             class="offcanvas offcanvas-end shadow"
             tabindex="-1"
             id="navbarNavHamburger"
+            data-bs-backdrop="false"
             aria-labelledby="navbarNavHamburgerLabel"
           >
             <div class="offcanvas-header border-bottom">
               <div class="lc-block">
                 <div editable="rich">
-                  <h5 class="offcanvas-title" id="navbarNavHamburgerLabel">
-                    Menu
+                  <h5
+                    class="offcanvas-title text-center"
+                    id="navbarNavHamburgerLabel"
+                  >
+                    Bienvenido al menú de personalización!
                   </h5>
+                  <p class="mt-4 text-center">
+                    Aquí puedes cambiar el estílo de la página, además puedes
+                    seleccionar la celebridad con una temática única.
+                  </p>
                 </div>
               </div>
 
@@ -145,26 +158,17 @@
                   <div class="lc-block mb-4">
                     <div lc-helper="shortcode" class="live-shortcode me-auto">
                       <!--  lc_nav_menu -->
-                      <ul id="menu-menu-1" class="navbar-nav">
-                        <li
-                          class="menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-32739"
-                        >
-                          <a
-                            href="https://library.livecanvas.com/starters"
-                            class="nav-link"
-                            >BS5 Page Templates</a
-                          >
-                        </li>
-                        <li
-                          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home nav-item nav-item-32738"
-                        >
-                          <a
-                            href="https://library.livecanvas.com/sections/"
-                            class="nav-link"
-                            >BS5 Snippets</a
-                          >
-                        </li>
-                      </ul>
+                      <div class="container-festividades">
+                        <div class="parent">
+                          <div class="div1"><canvas></canvas></div>
+                          <div class="div2"><canvas></canvas></div>
+                          <div class="div3"><canvas></canvas></div>
+                          <div class="div4"><canvas></canvas></div>
+                          <div class="div5"><canvas></canvas></div>
+                          <div class="div6"><canvas></canvas></div>
+                        </div>
+                      </div>
+
                       <!-- /lc_nav_menu -->
                     </div>
                   </div>
@@ -192,15 +196,253 @@
 
         <div class="bow" id="bow">🎀</div>
 
-        <p class="hint">Abre el regalo para desbloquear la página</p>
+        <p class="hint">Estira el moño para abrir el regalo!</p>
       </div>
     </section>
 
     <div id="scroll-anchor"></div>
 
     <!-- pagina principal -->
-    <section class="content hidden" id="content"></section>
+    <section class="content" id="content">
+      <!-- Card de bienvenida -->
+      <div class="card mb-3" style="max-width: 540px">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="#" class="img-fluid rounded-start" alt="..." />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card de bienvenida</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+              <div class="container-buttons d-flex justify-content-around">
+                <button class="btn btn-primary btn-siguiente">Siguiente</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <!-- card de Inicio de formulario -->
+      <div class="card" style="width: 18rem">
+        <img src="..." class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">¿Quién organiza el Intercambio?</h5>
+          <form>
+            <div class="mb-3">
+              <label for="label-nombre-organizador" class="form-label"
+                >Nombre del organizador</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="input-nombre-organizador"
+                placeholder="Mi nombre"
+                required
+              />
+            </div>
+            <div class="mb-3 form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="exampleCheck1"
+              />
+              <label class="form-check-label" for="label-participar-intercambio"
+                >Yo también participo en el intercambio</label
+              >
+            </div>
+            <div class="container-buttons d-flex justify-content-around">
+              <button class="btn btn-primary btn-anterior">Anterior</button>
+              <button class="btn btn-primary btn-siguiente">Siguiente</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- sección de agregar participante -->
+      <div class="container-agregar-participantes">
+        <!--probablemente toda la logica se maneje en este div -->
+        <div class="card" style="width: 18rem">
+          <img src="..." class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title text-center">Agregar Participante</h5>
+            <form>
+              <div class="mb-3">
+                <label for="label-nombre-participante" class="form-label"
+                  >Nombre:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="input-nombre-participante"
+                  placeholder="Ej. Rubén Cano"
+                  required
+                />
+              </div>
+              <button class="btn btn-primary btn-anterior mb-4">
+                Generar Exclusión
+              </button>
+              <div class="container-buttons d-flex justify-content-around">
+                <button class="btn btn-primary btn-anterior">Anterior</button>
+                <button class="btn btn-primary btn-terminar-participantes">
+                  Listo
+                </button>
+                <button class="btn btn-primary btn-siguiente">Siguiente</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Si le da a listo, se despliega esta advertencia -->
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">¿Estás seguro?</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <p>¿Terminaste de agregar a todos los participantes?</p>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    No, me faltó alguien
+                  </button>
+                  <button type="button" class="btn btn-primary btn-siguiente">
+                    Si, Siguiente
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- este div de abajo termina el container-participantes -->
+      </div>
+
+      <!-- aqui iría la idea de la festividad -->
+      <div class="card" style="width: 18rem">
+        <img src="..." class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title text-center">Selecciona el Evento</h5>
+          <form>
+            <div class="mb-3 d-flex justify-content-center">
+              <button
+                type="button"
+                class="btn btn-primary btn-anterior mb-4 mt-4"
+                id="btnCelebridad"
+              >
+                ¡Elige la celebridad!
+              </button>
+            </div>
+            <h6 class="card-title text-center">
+              Selecciona la fecha del evento
+            </h6>
+            <div class="container-calendario">
+              <div class="row">
+                <div class="col-sm-6 col-lg-5 mb-3 mb-sm-0">
+                  <div
+                    data-coreui-locale="en-US"
+                    data-coreui-toggle="date-picker"
+                  ></div>
+                </div>
+                <div class="col-sm-6 col-lg-5">
+                  <div
+                    data-coreui-date="2023/03/15"
+                    data-coreui-locale="en-US"
+                    data-coreui-toggle="date-picker"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div class="container-buttons d-flex justify-content-around">
+              <button class="btn btn-primary btn-anterior">Anterior</button>
+              <button class="btn btn-primary btn-siguiente">Terminar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Si le da a listo, se despliega esta advertencia -->
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Resúmen</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <p>Antes de ver el sorteo, ¿quieres ver el resumen?</p>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  No, Proceder al sorteo.
+                </button>
+                <button type="button" class="btn btn-primary">
+                  Si, Ver el resúmen.
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- si le da a ver el resúmen, se quita el bloqueo del scroll y manda hacia abajo a una table -->
+    <!-- En exclusión sería un botón que despliega un modal con los que tiene exclusión -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"># Participante</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Exclusión</th>
+          <th scope="col">Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>John</td>
+          <td>Doe</td>
+          <td>@social</td>
+        </tr>
+      </tbody>
+    </table>
     <!-- footer -->
     <footer class="container-footer">
       <section>
@@ -315,8 +557,7 @@
           lc-helper="background"
           style="
             height: 30vh;
-            background: url(https://images.unsplash.com/photo-1524260855046-f743b3cdad07?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1980&amp;h=768&amp;fit=crop&amp;ixid=eyJhcHBfaWQiOjM3ODR9)
-              center / cover no-repeat;
+            background: url(media/fondofooter.png) center / cover no-repeat;
             margin-top: -100px;
           "
         ></div>
@@ -327,6 +568,9 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.0.0/dist/js/coreui.bundle.min.js"></script>
     <script src="/js/regalo.js"></script>
+    <script src="/js/cards.js"></script>
+    <script src="/js/Fondos.js"></script>
   </body>
 </html>

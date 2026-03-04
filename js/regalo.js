@@ -7,6 +7,9 @@ let startX = 0;
 let dragging = false;
 let opened = false;
 
+//bloquear scroll
+document.body.classList.add("lock-scroll");
+
 bow.addEventListener("pointerdown", (e) => {
   if (opened) return;
 
@@ -50,7 +53,7 @@ function openGift() {
   gift.style.transition = "0.6s ease";
   gift.style.transform = "scale(1.1)";
   gift.style.opacity = "0";
-
+  
   setTimeout(() => {
     intro.classList.add("closing");
 
@@ -59,10 +62,12 @@ function openGift() {
       () => {
         intro.remove();
 
-        content.classList.remove("hidden");
-        content.classList.add("visible");
+        document.body.classList.remove("lock-scroll");
       },
       { once: true },
     );
   }, 500);
+
+  //mostramos la card
+  initCards();
 }
