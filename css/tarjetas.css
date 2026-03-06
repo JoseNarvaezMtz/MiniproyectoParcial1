@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  background: #f6f6e8;
+  font-family: sans-serif;
+}
+
+.masonry-layout {
+  margin: 2rem;
+}
+
+.grid {
+  margin: auto;
+}
+
+.grid-item {
+  width: 220px;
+  margin-bottom: 15px;
+}
+
+.card {
+  border-radius: 18px;
+  padding: 20px;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card h5 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.card p {
+  margin-top: 8px;
+  font-size: 0.95rem;
+}
