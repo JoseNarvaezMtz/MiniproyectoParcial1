@@ -161,12 +161,12 @@
                       <!--  lc_nav_menu -->
                       <div class="container-festividades">
                         <div class="parent">
-                          <div class="div1"><canvas></canvas></div>
-                          <div class="div2"><canvas></canvas></div>
-                          <div class="div3"><canvas></canvas></div>
-                          <div class="div4"><canvas></canvas></div>
-                          <div class="div5"><canvas></canvas></div>
-                          <div class="div6"><canvas></canvas></div>
+                          <div class="div1"><canvas class="festividad" id="f1"></canvas></div>
+                          <div class="div2"><canvas class="festividad" id="f2"></canvas></div>
+                          <div class="div3"><canvas class="festividad" id="f3"></canvas></div>
+                          <div class="div4"><canvas class="festividad" id="f4"></canvas></div>
+                          <div class="div5"><canvas class="festividad" id="f5"></canvas></div>
+                          <div class="div6"><canvas class="festividad" id="fn"></canvas></div>
                         </div>
                       </div>
                       <!-- /lc_nav_menu -->
@@ -351,7 +351,7 @@
       </div>
 
       <!-- aqui iría la idea de la festividad -->
-      <div class="card" style="width: 18rem">
+      <div class="card" id="card-evento" style="width: 18rem">
         <img src="..." class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title text-center">Selecciona el Evento</h5>
@@ -370,13 +370,14 @@
             </h6>
             <div class="container-calendario mb-3">
               <div class="row">
-                <input type="date" class="form-control" />
+                <input id="input-fecha-intercambio" type="date" class="form-control" />
               </div>
             </div>
             <div class="container-buttons d-flex justify-content-around">
               <button class="btn btn-primary btn-anterior">Anterior</button>
               <button
                 class="btn btn-primary btn-siguiente"
+                id="btn-evento"
                 data-bs-toggle="modal"
                 data-bs-target="#modalResumen"
               >
@@ -580,5 +581,9 @@
     <script src="/js/regalo.js"></script>
     <script src="/js/cards.js"></script>
     <script src="/js/Fondos.js"></script>
+    <script src="/js/dragAndDrop.js"></script>
+    <script src="/js/localStorage.js"></script>
+    <script src="/js/intercambio.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

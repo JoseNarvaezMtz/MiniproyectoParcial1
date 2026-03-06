@@ -7,6 +7,13 @@
     listas = {'nombre1': ['valido1','valido2','valido3'], 'nombre2': ['valido1','valido2','valido3']}
 */
 
+const predParticipantes = [
+    'Pancho Perez',
+    'Carlos Quesos',
+    'Toño Estrellas',
+    'Adolf Müller'
+]
+
 //      FUNCIONES PARA REGISTRO DE DATOS
 function registrarParticipante(participante) {
     const lista = JSON.parse(localStorage.getItem('participantes'));
@@ -116,17 +123,6 @@ function verificarCambio(listas, participantes) {
     return { valido: true, problema: null };
 }
 
-//FUNCION DE INICIALIZACION (HACERLA AL INICIO)
-function inicializar() {
-    if (!localStorage.getItem('participantes')) {
-        localStorage.setItem('participantes', JSON.stringify([]));
-    }
-
-    if (!localStorage.getItem('listas')) {
-        localStorage.setItem('listas', JSON.stringify({}));
-    }
-}
-
 //FUNCION CAPTURA DATOS EVENTO
 function setDatosEvento(nombreOrg, nombreEve, fecha, presupuesto) {
     const evento = {nombreOrg, nombreEve, fecha, presupuesto};
@@ -136,4 +132,31 @@ function setDatosEvento(nombreOrg, nombreEve, fecha, presupuesto) {
 //FUNCION LECTURA DATOS EVENTO
 function getDatosEvento() {
     return JSON.parse(localStorage.getItem('evento'));
+}
+
+// FUNCION GUARDAR FESTIVIDAD
+function setFestividad(festividad) {
+    localStorage.setItem('festividad', JSON.stringify(festividad));
+}
+
+// FUNCION OBTENER FESTIVIDAD
+function getFestividad() {
+    return JSON.parse(localStorage.getItem('festividad'));
+}
+
+//FUNCION DE INICIALIZACION (HACERLA AL INICIO)
+function inicializar() {
+    if (!localStorage.getItem('participantes')) {
+        localStorage.setItem('participantes', JSON.stringify(predParticipantes));
+    }
+
+    let predLista = {}
+
+    predParticipantes.forEach(participante => {
+        predLista[participante] = predParticipantes.filter(p => p !== participante);
+    })
+
+    if (!localStorage.getItem('listas')) {
+        localStorage.setItem('listas', JSON.stringify(predLista));
+    }
 }
