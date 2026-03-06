@@ -32,64 +32,31 @@ function inicializarCanvas() {
         ctx.fillText(datos.nombre, canvas.width / 2, canvas.height * 0.82);
 
         // Hacer draggable
+        if (canvas.id == 'fn') return;
+
         canvas.setAttribute('draggable', true);
         canvas.style.cursor = 'grab';
     });
 }
 
 function crearZonaDrop() {
-    const card5 = document.getElementById('card-evento');
-    if (!card5 || document.getElementById('drop-zona-festividad')) return;
+    // Ya existe en el HTML, solo lo buscamos
+    const zona = document.getElementById('content');
+    if (!zona) return;
 
-    // Div de la zona del drop
-    const zona = document.createElement('div');
-    zona.id = 'drop-zona-festividad';
-    zona.style.cssText = `
-        border: 2px dashed #ccc;
-        border-radius: 10px;
-        padding: 16px;
-        text-align: center;
-        margin-bottom: 12px;
-        transition: background 0.2s;
-        min-height: 60px;
-    `;
-    zona.innerHTML = '<span class="text-muted">Arrastrar festividad AQUI</span>';
-
-    // Agregamos la zona al formulario
-    const form = card5.querySelector('form');
-    form.insertAdjacentElement('beforebegin', zona);
-
-    // --- dragover: se dispara mientras el elemento está sobre la zona ---
     zona.addEventListener('dragover', e => {
         e.preventDefault();
-        zona.style.background = '#e8f4fd';
     });
 
-    // --- dragleave: cuando el elemento sale de la zona sin soltar ---
-    zona.addEventListener('dragleave', () => {
-        zona.style.background = '';
-    });
-
-    // --- drop: cuando el usuario suelta el canvas sobre la zona ---
     zona.addEventListener('drop', e => {
         e.preventDefault();
-        zona.style.background = '';
 
         if (!festividadArrastrada) return;
 
         const datos = FESTIVIDADES[festividadArrastrada];
 
-        // Actualiza el contenido visual de la zona con la festividad elegida
-        zona.innerHTML = `
-            <strong style="color:${datos.color}; margin-left:8px; font-size:1rem">
-                ${datos.nombre}
-            </strong>
-        `;
-
-        // Actualiza el texto pequeño en el navbar
         actualizarNavbar(datos);
-
-        // Guarda en localStorage para uso posterior en setDatosEvento()
+        actualizarLabel(datos);
         setFestividad({ id: festividadArrastrada, ...datos });
     });
 }
@@ -97,6 +64,8 @@ function crearZonaDrop() {
 //Funcion para inicializar los canvas de drag
 function inicializarDrag() {
     document.querySelectorAll('canvas.festividad').forEach(canvas => {
+
+        if (canvas.id == 'fn') return;
 
         canvas.addEventListener('dragstart', e => {
             festividadArrastrada = canvas.id;
@@ -133,17 +102,54 @@ function actualizarNavbar(datos) {
     indicador.textContent = `${datos.nombre}`;
 }
 
+function actualizarLabel(datos) {
+    let label = document.getElementById('zona-festividad');
+
+    label.innerHTML = `
+        <strong style="color:${datos.color}; margin-left:8px; font-size:1rem">
+            ${datos.nombre}
+        </strong>
+    `;
+}
+
+ function inicializarLabel() {
+    const card5 = document.getElementById('card-evento');
+    const form = card5.querySelector('form');
+    const guardada = getFestividad();
+
+    const zona = document.createElement('div');
+    zona.id = 'zona-festividad';
+    zona.style.cssText = `
+        border: 2px dashed #ccc;
+        border-radius: 10px;
+        padding: 8px;
+        text-align: center;
+        margin-bottom: 8px;
+        min-height: 60px;
+    `;
+    zona.innerHTML = `
+        <strong style="color:${guardada.color}; margin-left:8px; font-size:1rem">
+            ${guardada.nombre}
+        </strong>
+    `;
+
+    form.insertAdjacentElement('beforebegin', zona);
+
+ }
+
+
 document.addEventListener('DOMContentLoaded', () => {
     inicializarCanvas();
     crearZonaDrop();
     inicializarDrag();
+    inicializarLabel();
 
     // Si ya hay festividad, la restauramos pa que se vea el localStorage
     const guardada = getFestividad();
     if (guardada) {
         actualizarNavbar(guardada);
 
-        const zona = document.getElementById('drop-zona-festividad');
+        const zona = document.getElementById('zona-festividad');
         if (zona) {
             zona.innerHTML = `
                 <strong style="color:${guardada.color}; margin-left:8px; font-size:1rem">
