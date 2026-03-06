@@ -1,16 +1,9 @@
 /* LOGICA DE DATOS */
 
 /*
-    Este JS solo tiene funciones de manejo de localStorage, se vincula con elementos
-    como listas entre otros.
-*/
-
-/*
     ESTRUCTURAS A GUARDAR:
 
     participantes = ['nombre1', 'nombre2', ..., 'nombreN'];
-
-    //FUNCIONA COMO DICCIONARIO
     listas = {'nombre1': ['valido1','valido2','valido3'], 'nombre2': ['valido1','valido2','valido3']}
 */
 
@@ -90,19 +83,7 @@ function actualizarValidosParticipante(participante, nuevaLista) {
 
 //      FUNCIONES DE VERIFICACION
 
-/*
-    PARA LA VERIFICACION:
-
-    El show de la ferificacion es un problema de conjuntos logicamente
-    que se llama el teorema de hall, consta de lo sig:
-
-    * Para cada subconjunto de participantes, la unión de sus
-    válidos debe tener al menos tantos elementos como el subconjunto.
-
-    Para la verificacion utilice esto, basicamente, uno las distintas listas
-    de cada uno de los participantes, en la combinacion de las listas sea
-    menor a la cantidad de candidatos, ya tenemos problemas jajaja
-*/
+/* PARA LA VERIFICACION: */
 function verificarCambio(listas, participantes) {
     const entradas = participantes
         .map(p => ({ nombre: p, validos: listas[p] })) //p = Participante
@@ -144,4 +125,15 @@ function inicializar() {
     if (!localStorage.getItem('listas')) {
         localStorage.setItem('listas', JSON.stringify({}));
     }
+}
+
+//FUNCION CAPTURA DATOS EVENTO
+function setDatosEvento(nombreOrg, nombreEve, fecha, presupuesto) {
+    const evento = {nombreOrg, nombreEve, fecha, presupuesto};
+    localStorage.setItem('evento', JSON.stringify(evento));
+}
+
+//FUNCION LECTURA DATOS EVENTO
+function getDatosEvento() {
+    return JSON.parse(localStorage.getItem('evento'));
 }
