@@ -1,9 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 /* fondo */
 .content {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  background: #000000;
+  background-image: url(/media/background-default.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
   transition: all 0.8s ease;
 }
 
@@ -11,10 +17,50 @@ body.lock-scroll {
   overflow: hidden;
 }
 
-#logo:hover {
-  background-image: url(media/logohover.png);
+.navbar {
+  background: #1b4332;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.navbar{
-  background-color: rgb(216, 246, 247);
+.navbar a {
+  color: rgb(250, 253, 73);
+}
+
+.navbar a:hover {
+  color: #ffd166;
+}
+
+/* footer */
+
+footer {
+  background: linear-gradient(180deg, #5a3e2b, #3b2a1f);
+  color: #f5ebe0;
+  padding: 30px 20px;
+  text-align: center;
+
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+footer a {
+  color: #9e7005;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  color: #8a6603;
+  text-decoration: underline;
+}
+
+.jua-regular {
+  font-family: "Jua", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
