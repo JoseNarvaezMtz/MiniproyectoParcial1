@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  background: linear-gradient(90deg, #88e6d1, #c7ffec);
+  background: linear-gradient(90deg, #59ac89, rgb(192, 243, 226));
   color: black;
   overflow-x: hidden;
 }
@@ -68,3 +68,4 @@ body {
     opacity: 0;
   }
 }
+

@@ -1,0 +1,77 @@
+.modal-content {
+  border-radius: 18px;
+  border: none;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.modal-header {
+  background: linear-gradient(135deg, #ff7a18, #ffb347);
+  color: white;
+  border-bottom: none;
+  padding: 1.5rem;
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.modal-body {
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 2rem;
+  color: #444;
+}
+
+.modal-footer {
+  border-top: none;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 1.5rem;
+}
+
+.modal-footer .btn {
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.modal-footer .btn-primary {
+  background: #ff7a18;
+  border: none;
+}
+
+.modal-footer .btn-primary:hover {
+  background: #ff5c00;
+  transform: translateY(-2px);
+}
+
+.modal-footer .btn-secondary {
+  background: #e5e5e5;
+  color: #333;
+  border: none;
+}
+
+.modal-footer .btn-secondary:hover {
+  background: #d4d4d4;
+}
+
+.btn-close {
+  filter: invert(1);
+  opacity: 0.8;
+}
+
+.modal.fade .modal-dialog {
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.modal.show .modal-dialog {
+  transform: scale(1);
+}
+
+.modal-title::before {
+  content: "🎁 ";
+}
