@@ -173,22 +173,6 @@ body.theme-halloween {
   --color-accent: #ff6b00;
 }
 
-body.theme-cumple {
-  --color-card-bg: #faf5ff;
-  --color-card-border: #9b59b6;
-
-  --color-input-bg: #f0e6fa;
-  --color-input-bg-focus: #e4d3f7;
-  --color-input-border: #9b59b6;
-
-  --color-btn-start: #9b59b6;
-  --color-btn-end: #7d3c98;
-
-  --color-btn-hover-start: #7d3c98;
-  --color-btn-hover-end: #5e2a73;
-
-  --color-accent: #9b59b6;
-}
 
 body.theme-valentin {
   --color-card-bg: #fff0f3;
