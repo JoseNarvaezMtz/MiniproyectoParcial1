@@ -141,7 +141,12 @@ function setFestividad(festividad) {
 
 // FUNCION OBTENER FESTIVIDAD
 function getFestividad() {
-    return JSON.parse(localStorage.getItem('festividad'));
+    return JSON.parse(localStorage.getItem('festividad')) || {
+        id: 'fn',
+        nombre: 'Personalizado',
+        tema: 'theme-default',
+        color: '#2C3E50'
+    };
 }
 
 //FUNCION DE INICIALIZACION (HACERLA AL INICIO)
@@ -159,4 +164,13 @@ function inicializar() {
     if (!localStorage.getItem('listas')) {
         localStorage.setItem('listas', JSON.stringify(predLista));
     }
+}
+
+//PARA EL SORTEO
+function setParejas(parejas) {
+    localStorage.setItem('parejas', JSON.stringify(parejas));
+}
+
+function getParejas() {
+    return JSON.parse(localStorage.getItem('parejas'));
 }
