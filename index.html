@@ -14,22 +14,19 @@
       href="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.0.0/dist/css/coreui.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/regalo.css" />
-    <link rel="stylesheet" href="/css/cartas.css" />
-    <link rel="stylesheet" href="/css/festividades.css" />
-    <link rel="stylesheet" href="/css/modals.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/regalo.css" />
+    <link rel="stylesheet" href="css/cartas.css" />
+    <link rel="stylesheet" href="css/festividades.css" />
+    <link rel="stylesheet" href="css/modals.css" />
   </head>
   <body class="jua-regular">
     <!-- header -->
     <header class="container-header">
       <nav class="navbar">
-        <div class="container py-5">
+        <div class="container py-5 cherry-bomb-one-regular">
           <!-- Mobile Logo -->
-          <a
-            class="navbar-brand d-lg-none"
-            href="https://library.livecanvas.com/sections/"
-          >
+          <a class="navbar-brand d-lg-none" href="#">
             <img
               src="media/logo.png"
               width="200"
@@ -43,13 +40,9 @@
 
           <!-- Desktop Logo -->
           <div
-            class="lc-block position-absolute start-50 translate-middle top-50 d-none d-lg-block"
+            class="lc-block position-absolute start-50 translate-middle top-50 d-none d-lg-block cherry-bomb-one-regular"
           >
-            <a
-              editable="inline"
-              class="navbar-brand mx-auto"
-              href="https://library.livecanvas.com/sections/"
-            >
+            <a editable="inline" class="navbar-brand mx-auto" href="#">
               <img
                 src="media/logo.png"
                 width="200"
@@ -208,7 +201,7 @@
           >
             <img
               src="media/sorpresa.png"
-              class="img-fluid rounded-start mt-40px"
+              class="img-fluid rounded-start mt-40px w-50 w-md-50 w-lg-75"
               alt="..."
             />
           </div>
@@ -236,7 +229,7 @@
       <div class="card col-12 col-md-8 col-lg-5 mx-auto" style="width: 18rem">
         <img
           src="media/regalos.png"
-          class="card-img-top w-50 mx-auto d-block mt-3"
+          class="card-img-top w-50 mx-auto d-block mt-3 w-50 w-md-75 w-lg-50"
           alt="..."
         />
         <div class="card-body">
@@ -267,7 +260,9 @@
             <div
               class="container-buttons d-flex justify-content-around d-flex flex-column flex-md-row justify-content-md-between gap-2 mt-3"
             >
-              <button type="button" class="btn btn-primary btn-anterior">Anterior</button>
+              <button type="button" class="btn btn-primary btn-anterior">
+                Anterior
+              </button>
               <button
                 type="button"
                 class="btn btn-primary btn-siguiente"
@@ -378,8 +373,12 @@
             <div
               class="container-buttons d-flex justify-content-around d-flex flex-column flex-md-row justify-content-md-between gap-2 mt-3"
             >
-              <button type="button" class="btn btn-primary btn-anterior">Anterior</button>
-              <button type="button" class="btn btn-primary btn-siguiente">Siguiente</button>
+              <button type="button" class="btn btn-primary btn-anterior">
+                Anterior
+              </button>
+              <button type="button" class="btn btn-primary btn-siguiente">
+                Siguiente
+              </button>
             </div>
           </form>
         </div>
@@ -555,10 +554,8 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div
-              class="col-md-6 offset-md-3 d-flex column justify-content-center"
-            >
+          <div class="row row-cols-1 row-cols-md-2 text-center">
+            <div class="col">
               <div class="lc-block text-center text-dark py-5 mx-2">
                 <a
                   class="text-decoration-none"
@@ -578,6 +575,9 @@
                   </svg>
                 </a>
               </div>
+            </div>
+
+            <div class="col">
               <div class="lc-block text-center text-dark py-5 mx-2">
                 <a
                   class="text-decoration-none"
@@ -597,6 +597,9 @@
                   </svg>
                 </a>
               </div>
+            </div>
+
+            <div class="col">
               <div class="lc-block text-center text-dark py-5 mx-2">
                 <a
                   class="text-decoration-none"
@@ -616,6 +619,9 @@
                   </svg>
                 </a>
               </div>
+            </div>
+
+            <div class="col">
               <div class="lc-block text-center text-dark py-5 mx-2">
                 <a
                   class="text-decoration-none"
@@ -656,12 +662,11 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.0.0/dist/js/coreui.bundle.min.js"></script>
-    <script src="/js/regalo.js"></script>
-    <script src="/js/cards.js"></script>
-    <script src="/js/Fondos.js"></script>
-    <script src="/js/localStorage.js"></script>
-    <script src="/js/dragAndDrop.js"></script>
-    <script src="/js/intercambio.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="js/regalo.js"></script>
+    <script src="js/cards.js"></script>
+    <script src="js/localStorage.js"></script>
+    <script src="js/dragAndDrop.js"></script>
+    <script src="js/intercambio.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

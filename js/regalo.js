@@ -53,7 +53,7 @@ function openGift() {
   gift.style.transition = "0.6s ease";
   gift.style.transform = "scale(1.1)";
   gift.style.opacity = "0";
-  
+
   setTimeout(() => {
     intro.classList.add("closing");
 
@@ -67,7 +67,4 @@ function openGift() {
       { once: true },
     );
   }, 500);
-
-  //mostramos la card
-  initCards();
 }

@@ -139,7 +139,7 @@
   --color-accent: #e63946;
 }
 
-body.theme-navidad {
+body.theme-Navidad {
   --color-card-bg: #f0fff4;
   --color-card-border: #165b33;
 
@@ -156,7 +156,7 @@ body.theme-navidad {
   --color-accent: #165b33;
 }
 
-body.theme-halloween {
+body.theme-Halloween {
   --color-card-bg: #fff5ec;
   --color-card-border: #ff6b00;
 
@@ -173,8 +173,7 @@ body.theme-halloween {
   --color-accent: #ff6b00;
 }
 
-
-body.theme-valentin {
+body.theme-San-Valentin {
   --color-card-bg: #fff0f3;
   --color-card-border: #c0392b;
 
@@ -191,7 +190,7 @@ body.theme-valentin {
   --color-accent: #c0392b;
 }
 
-body.theme-anonuevo {
+body.theme-Ano-Nuevo {
   --color-card-bg: #f4f4ff;
   --color-card-border: #1a1a2e;
 
