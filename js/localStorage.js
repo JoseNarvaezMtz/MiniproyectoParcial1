@@ -125,7 +125,12 @@ function verificarCambio(listas, participantes) {
 
 //FUNCION CAPTURA DATOS EVENTO
 function setDatosEvento(nombreOrg, nombreEve, fecha, presupuesto) {
-    const evento = {nombreOrg, nombreEve, fecha, presupuesto};
+    const evento = {
+        nombreOrg:    nombreOrg    || 'Organizador',
+        nombreEve:    nombreEve    || 'Sin festividad',
+        fecha:        fecha        || '2026-12-25',
+        presupuesto:  presupuesto  || '$100'
+    };
     localStorage.setItem('evento', JSON.stringify(evento));
 }
 
