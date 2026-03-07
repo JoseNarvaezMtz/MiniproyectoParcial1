@@ -1,36 +1,6 @@
 const grid = document.querySelector(".grid");
 let msnry;
 
-const personas = [
-  "Ana",
-  "Luis",
-  "Carlos",
-  "María",
-  "Pedro",
-  "Sofía",
-  "Laura",
-  "Miguel",
-  "Diego",
-  "Camila",
-  "Elena",
-  "Raúl",
-  "Fernando",
-  "Valeria",
-  "Paola",
-];
-
-// Aqui es donde vamos a cambiar esta madre que me dio chat por el resultado del sorteo
-function generarRegalos(lista) {
-  let mezclado = [...lista].sort(() => Math.random() - 0.5);
-
-  return lista.map((p, i) => ({
-    de: p,
-    para: mezclado[i],
-  }));
-}
-
-const regalos = generarRegalos(personas);
-
 function randomHeight() {
   return Math.floor(Math.random() * 200) + 120;
 }
@@ -68,4 +38,13 @@ function render(data) {
   });
 }
 
-render(regalos);
+document.addEventListener('DOMContentLoaded', () => {
+    const parejas = getParejas();
+
+    if (!parejas) {
+        window.location.href = '/index.html';
+        return;
+    }
+
+    render(parejas);
+});
