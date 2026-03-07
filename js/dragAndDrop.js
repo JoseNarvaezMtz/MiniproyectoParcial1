@@ -2,10 +2,8 @@
 const FESTIVIDADES = {
   f1: { nombre: "Navidad", tema: "theme-navidad", color: "#165B33" },
   f2: { nombre: "Halloween", tema: "theme-halloween", color: "#FF6B00" },
-  f3: { nombre: "Cumpleaños", tema: "theme-cumple", color: "#9B59B6" },
-  f4: { nombre: "San Valentín", tema: "theme-valentin", color: "#C0392B" },
-  f5: { nombre: "Año Nuevo", tema: "theme-anonuevo", color: "#1A1A2E" },
-  fn: { nombre: "Personalizado", tema: "theme-default", color: "#2C3E50" },
+  f3: { nombre: "San Valentín", tema: "theme-valentin", color: "#C0392B" },
+  f4: { nombre: "Año Nuevo", tema: "theme-anonuevo", color: "#1A1A2E" },
 };
 
 let festividadArrastrada = null;
@@ -28,7 +26,6 @@ function inicializarCanvas() {
     // Nombre
     ctx.fillStyle = "#FFFFFF";
     ctx.font = `bold ${canvas.width * 0.13}px sans-serif`;
-    ctx.fillText(datos.nombre, canvas.width / 2, canvas.height * 0.82);
 
     // Hacer draggable
     if (canvas.id == "fn") return;
@@ -118,8 +115,10 @@ function inicializarLabel() {
   const form = card5.querySelector("form");
   const guardada = getFestividad();
 
-  const zona = document.createElement("div");
+  const zona = document.createElement("input");
   zona.id = "zona-festividad";
+  zona.classList.add("form-control");
+
   zona.style.cssText = `
         border: 2px dashed #ccc;
         border-radius: 10px;
@@ -164,7 +163,6 @@ function aplicarTema(tema) {
   document.body.classList.remove(
     "theme-navidad",
     "theme-halloween",
-    "theme-cumple",
     "theme-valentin",
     "theme-anonuevo",
   );

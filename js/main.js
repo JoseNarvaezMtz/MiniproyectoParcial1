@@ -211,6 +211,20 @@ function inicializarTarjetaResumen(elemento) {
         window.location.href = '/sorteo.html';
     })
 
+    document.getElementById("btn-proceder-sorteo").addEventListener("click", () => {
+
+    const parejas = realizarIntercambio();
+
+    if (!parejas) {
+        alert("No fue posible realizar el intercambio, revisa las exclusiones.");
+        return;
+    }
+
+    setParejas(parejas);
+    window.location.href = "/sorteo.html";
+
+});
+
 }
 
 function actualizarTarjetaResumen(elemento) {

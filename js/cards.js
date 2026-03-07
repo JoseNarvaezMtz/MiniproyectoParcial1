@@ -1,38 +1,62 @@
-//aqui se debe de manejar la lógica de sólo mostrar una card
+// ================================
+// CONTROL DE CARDS
+// ================================
+
 const cards = document.querySelectorAll("#content .card");
 let current = 0;
 
 function showCard(index) {
   cards.forEach((card, i) => {
-    card.classList.toggle("active", i === index);
+    card.classList.remove("active", "fly-out");
+
+    if (i === index) {
+      card.style.display = "block";
+
+      // pequeña espera para que la animación se aplique
+      setTimeout(() => {
+        card.classList.add("active");
+      }, 10);
+    } else {
+      card.style.display = "none";
+    }
   });
 }
 
-function initCards() {
-  current = 0;
+function nextCard() {
+  if (current >= cards.length - 1) return;
+
+  const cardActual = cards[current];
+
+  cardActual.classList.add("fly-out");
+
+  setTimeout(() => {
+    current++;
+    showCard(current);
+  }, 500);
+}
+
+function prevCard() {
+  if (current <= 0) return;
+
+  current--;
   showCard(current);
 }
 
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("btn-siguiente")) {
     e.preventDefault();
-    if (current < cards.length - 1) {
-      current++;
-      showCard(current);
-    }
+    nextCard();
   }
 
   if (e.target.classList.contains("btn-anterior")) {
     e.preventDefault();
-    if (current > 0) {
-      current--;
-      showCard(current);
-    }
+    prevCard();
   }
 });
 
-//Lógica para el día feriado
 document.addEventListener("DOMContentLoaded", function () {
+  showCard(current);
+
   const offcanvasElement = document.getElementById("navbarNavHamburger");
   const offcanvas = new bootstrap.Offcanvas(offcanvasElement);
 

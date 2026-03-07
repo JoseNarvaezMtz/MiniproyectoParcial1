@@ -171,12 +171,6 @@
                           <div class="div4">
                             <canvas class="festividad" id="f4"></canvas>
                           </div>
-                          <div class="div5">
-                            <canvas class="festividad" id="f5"></canvas>
-                          </div>
-                          <div class="div6">
-                            <canvas class="festividad" id="fn"></canvas>
-                          </div>
                         </div>
                       </div>
                       <!-- /lc_nav_menu -->
@@ -209,8 +203,14 @@
       <!-- Card de bienvenida -->
       <div class="card mb-3" style="max-width: 540px">
         <div class="row g-0">
-          <div class="col-md-4">
-            <img src="#" class="img-fluid rounded-start" alt="..." />
+          <div
+            class="col-md-4 d-flex align-items-center justify-content-center p-2"
+          >
+            <img
+              src="media/sorpresa.png"
+              class="img-fluid rounded-start mt-40px"
+              alt="..."
+            />
           </div>
           <div class="col-md-8">
             <div class="card-body">
@@ -234,7 +234,11 @@
 
       <!-- card de Inicio de formulario -->
       <div class="card col-12 col-md-8 col-lg-5 mx-auto" style="width: 18rem">
-        <img src="..." class="card-img-top" alt="..." />
+        <img
+          src="media/regalos.png"
+          class="card-img-top w-50 mx-auto d-block mt-3"
+          alt="..."
+        />
         <div class="card-body">
           <h5 class="card-title">¿Quién organiza el Intercambio?</h5>
           <form>
@@ -264,7 +268,11 @@
               class="container-buttons d-flex justify-content-around d-flex flex-column flex-md-row justify-content-md-between gap-2 mt-3"
             >
               <button class="btn btn-primary btn-anterior">Anterior</button>
-              <button type="submit" class="btn btn-primary btn-siguiente" id="boton-sig-organizador">
+              <button
+                type="submit"
+                class="btn btn-primary btn-siguiente"
+                id="boton-sig-organizador"
+              >
                 Siguiente
               </button>
             </div>
@@ -274,7 +282,11 @@
 
       <!--probablemente toda la logica se maneje en este div -->
       <div class="card col-12 col-md-8 col-lg-5 mx-auto" style="width: 18rem">
-        <img src="..." class="card-img-top" alt="..." />
+        <img
+          src="media/agregar-usuario.png"
+          class="card-img-top w-50 mx-auto d-block mt-3"
+          alt="..."
+        />
         <div class="card-body">
           <h5 class="card-title text-center">Agregar Participante</h5>
           <form>
@@ -342,7 +354,11 @@
       </div>
 
       <div class="card col-12 col-md-8 col-lg-5 mx-auto" style="width: 18rem">
-        <img src="..." class="card-img-top" alt="..." />
+        <img
+          src="media/bolsa-de-dinero.png"
+          class="card-img-top w-50 mx-auto d-block mt-3"
+          alt="..."
+        />
         <div class="card-body">
           <h5 class="card-title">¿Cuál es el presupuesto del intercambio?</h5>
           <form>
@@ -374,7 +390,11 @@
         id="card-evento"
         style="width: 18rem"
       >
-        <img src="..." class="card-img-top" alt="..." />
+        <img
+          src="media/evento.png"
+          class="card-img-top w-50 mx-auto d-block mt-3"
+          alt="..."
+        />
         <div class="card-body">
           <h5 class="card-title text-center">Selecciona el Evento</h5>
           <form>
@@ -456,8 +476,11 @@
       </div>
 
       <!-- CARD EXCEPCIONES -->
-      <div class="card col-12 col-md-8 col-lg-5 mx-auto" id="card-excepciones" style="width: 18rem">
-      </div>
+      <div
+        class="card col-12 col-md-8 col-lg-5 mx-auto"
+        id="card-excepciones"
+        style="width: 18rem"
+      ></div>
 
       <!-- MODAL RESUMEN -->
       <div class="modal fade" id="modalResumen" tabindex="-1">
@@ -477,7 +500,7 @@
             <div class="modal-footer">
               <button
                 type="button"
-                class="btn btn-secondary"
+                class="btn btn-secondary btn-siguiente"
                 data-bs-dismiss="modal"
               >
                 Ver lista de participantes
@@ -487,6 +510,7 @@
                 type="button"
                 class="btn btn-primary"
                 data-bs-dismiss="modal"
+                id="btn-proceder-sorteo"
               >
                 Proceder al sorteo
               </button>
@@ -496,8 +520,11 @@
       </div>
 
       <!-- CARD RESUMEN -->
-      <div class="card col-12 col-md-8 col-lg-5 mx-auto" id="card-resumen" style="width: 18rem">
-      </div>
+      <div
+        class="card col-12 col-md-8 col-lg-5 mx-auto"
+        id="card-resumen"
+        style="width: 18rem"
+      ></div>
     </section>
     <!-- footer -->
     <footer class="container-footer">
