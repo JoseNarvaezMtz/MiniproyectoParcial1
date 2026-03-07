@@ -23,7 +23,7 @@ function registrarParticipante(participante) {
 
     // Añadimos el nuevo participante a los válidos de todos los demás
     lista.forEach(p => {
-        if (!listas[p].includes(participante) && listas[p].length === lista.length) { //Solo en caso de que ya tenga la lista completa
+        if (listas[p].length === lista.length - 1) { //Solo en caso de que ya tenga la lista completa
             listas[p].push(participante);
         }
     });
@@ -149,23 +149,6 @@ function getFestividad() {
     };
 }
 
-//FUNCION DE INICIALIZACION (HACERLA AL INICIO)
-function inicializar() {
-    if (!localStorage.getItem('participantes')) {
-        localStorage.setItem('participantes', JSON.stringify(predParticipantes));
-    }
-
-    let predLista = {}
-
-    predParticipantes.forEach(participante => {
-        predLista[participante] = predParticipantes.filter(p => p !== participante);
-    })
-
-    if (!localStorage.getItem('listas')) {
-        localStorage.setItem('listas', JSON.stringify(predLista));
-    }
-}
-
 //PARA EL SORTEO
 function setParejas(parejas) {
     localStorage.setItem('parejas', JSON.stringify(parejas));
@@ -173,4 +156,17 @@ function setParejas(parejas) {
 
 function getParejas() {
     return JSON.parse(localStorage.getItem('parejas'));
+}
+
+//FUNCION DE INICIALIZACION (HACERLA AL INICIO)
+function inicializar() {
+    localStorage.setItem('participantes', JSON.stringify(predParticipantes));
+
+    let predLista = {}
+
+    predParticipantes.forEach(participante => {
+        predLista[participante] = predParticipantes.filter(p => p !== participante);
+    })
+
+    localStorage.setItem('listas', JSON.stringify(predLista));
 }

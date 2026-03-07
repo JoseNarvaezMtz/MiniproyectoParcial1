@@ -254,7 +254,7 @@
               <input
                 type="checkbox"
                 class="form-check-input"
-                id="exampleCheck1"
+                id="checkbox-organizador"
               />
               <label class="form-check-label" for="label-participar-intercambio"
                 >Yo también participo en el intercambio</label
@@ -264,7 +264,7 @@
               class="container-buttons d-flex justify-content-around d-flex flex-column flex-md-row justify-content-md-between gap-2 mt-3"
             >
               <button class="btn btn-primary btn-anterior">Anterior</button>
-              <button type="submit" class="btn btn-primary btn-siguiente">
+              <button type="submit" class="btn btn-primary btn-siguiente" id="boton-sig-organizador">
                 Siguiente
               </button>
             </div>
@@ -496,49 +496,7 @@
       </div>
 
       <!-- CARD RESUMEN -->
-      <div class="col-12 col-md-8 col-lg-5 mx-auto" style="width: 18rem">
-        <div class="card-body">
-          <h5 class="card-title text-center">Resumen</h5>
-
-          <div class="mb-3">
-            <label class="form-label">Nombre:</label>
-
-            <input
-              type="text"
-              class="form-control"
-              id="input-participante-resumen"
-              disabled
-            />
-          </div>
-
-          <div class="mb-3">
-            <div class="container-checkbox-registros"></div>
-          </div>
-
-          <div class="d-flex justify-content-around">
-            <button type="button" id="boton-sorteo" class="btn btn-primary">Hacer sorteo</button>
-          </div>
-
-          <div
-            class="d-flex justify-content-around mt-3 d-flex flex-column flex-md-row justify-content-md-between gap-2 mt-3"
-          >
-            <button
-              type="button"
-              class="btn btn-primary"
-              id="btn-resumen-anterior"
-            >
-              ←
-            </button>
-
-            <button
-              type="button"
-              class="btn btn-primary"
-              id="btn-resumen-siguiente"
-            >
-              →
-            </button>
-          </div>
-        </div>
+      <div class="col-12 col-md-8 col-lg-5 mx-auto" id="card-resumen" style="width: 18rem">
       </div>
     </section>
     <!-- footer -->
