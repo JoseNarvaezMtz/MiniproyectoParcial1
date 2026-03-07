@@ -74,26 +74,3 @@ document.addEventListener("DOMContentLoaded", function () {
     offcanvas.show();
   });
 });
-
-//Lógica para la animación para que salgan volando
-const botones = document.querySelectorAll(".btn-siguiente");
-
-let indice = 0;
-
-botones.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const cardActual = cards[indice];
-
-    cardActual.classList.add("fly-out");
-
-    setTimeout(() => {
-      cardActual.style.display = "none";
-      indice++;
-
-      if (cards[indice]) {
-        cards[indice].style.opacity = "1";
-        cards[indice].style.transform = "scale(1)";
-      }
-    }, 600);
-  });
-});
