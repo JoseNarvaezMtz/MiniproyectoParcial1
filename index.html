@@ -83,7 +83,6 @@
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
                   viewBox="0 0 16 16"
-                  style=""
                   lc-helper="svg-icon"
                   class="rws-1"
                 >
@@ -99,7 +98,6 @@
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
                   viewBox="0 0 16 16"
-                  style=""
                   lc-helper="svg-icon"
                   class="rws-1"
                 >
@@ -154,19 +152,31 @@
               ></button>
             </div>
             <div class="offcanvas-body">
-              <div class="row">
-                <div class="col-12">
+              <div class="row g-3">
+                <div class="col-6 col-md-4 col-lg-3">
                   <div class="lc-block mb-4">
                     <div lc-helper="shortcode" class="live-shortcode me-auto">
                       <!--  lc_nav_menu -->
                       <div class="container-festividades">
                         <div class="parent">
-                          <div class="div1"><canvas class="festividad" id="f1"></canvas></div>
-                          <div class="div2"><canvas class="festividad" id="f2"></canvas></div>
-                          <div class="div3"><canvas class="festividad" id="f3"></canvas></div>
-                          <div class="div4"><canvas class="festividad" id="f4"></canvas></div>
-                          <div class="div5"><canvas class="festividad" id="f5"></canvas></div>
-                          <div class="div6"><canvas class="festividad" id="fn"></canvas></div>
+                          <div class="div1">
+                            <canvas class="festividad" id="f1"></canvas>
+                          </div>
+                          <div class="div2">
+                            <canvas class="festividad" id="f2"></canvas>
+                          </div>
+                          <div class="div3">
+                            <canvas class="festividad" id="f3"></canvas>
+                          </div>
+                          <div class="div4">
+                            <canvas class="festividad" id="f4"></canvas>
+                          </div>
+                          <div class="div5">
+                            <canvas class="festividad" id="f5"></canvas>
+                          </div>
+                          <div class="div6">
+                            <canvas class="festividad" id="fn"></canvas>
+                          </div>
                         </div>
                       </div>
                       <!-- /lc_nav_menu -->
@@ -212,7 +222,9 @@
                 disfrutar. Esperamos que encuentres el regalo perfecto y que
                 esta dinámica haga el momento aún más especial.
               </p>
-              <div class="container-buttons d-flex justify-content-around">
+              <div
+                class="container-buttons d-flex justify-content-around d-flex flex-column flex-md-row justify-content-md-between gap-2 mt-3"
+              >
                 <button class="btn btn-primary btn-siguiente">Siguiente</button>
               </div>
             </div>
@@ -221,7 +233,7 @@
       </div>
 
       <!-- card de Inicio de formulario -->
-      <div class="card" style="width: 18rem">
+      <div class="card col-12 col-md-8 col-lg-5 mx-auto" style="width: 18rem">
         <img src="..." class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">¿Quién organiza el Intercambio?</h5>
@@ -248,7 +260,9 @@
                 >Yo también participo en el intercambio</label
               >
             </div>
-            <div class="container-buttons d-flex justify-content-around">
+            <div
+              class="container-buttons d-flex justify-content-around d-flex flex-column flex-md-row justify-content-md-between gap-2 mt-3"
+            >
               <button class="btn btn-primary btn-anterior">Anterior</button>
               <button type="submit" class="btn btn-primary btn-siguiente">
                 Siguiente
@@ -259,7 +273,7 @@
       </div>
 
       <!--probablemente toda la logica se maneje en este div -->
-      <div class="card" style="width: 18rem">
+      <div class="card col-12 col-md-8 col-lg-5 mx-auto" style="width: 18rem">
         <img src="..." class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title text-center">Agregar Participante</h5>
@@ -276,7 +290,9 @@
                 required
               />
             </div>
-            <div class="container-buttons d-flex justify-content-around">
+            <div
+              class="container-buttons d-flex justify-content-around d-flex flex-column flex-md-row justify-content-md-between gap-2 mt-3"
+            >
               <button class="btn btn-primary mb-4 d-flex" id="btn-agregar">
                 Agregar
               </button>
@@ -325,7 +341,7 @@
         </div>
       </div>
 
-      <div class="card" style="width: 18rem">
+      <div class="card col-12 col-md-8 col-lg-5 mx-auto" style="width: 18rem">
         <img src="..." class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">¿Cuál es el presupuesto del intercambio?</h5>
@@ -342,7 +358,9 @@
                 required
               />
             </div>
-            <div class="container-buttons d-flex justify-content-around">
+            <div
+              class="container-buttons d-flex justify-content-around d-flex flex-column flex-md-row justify-content-md-between gap-2 mt-3"
+            >
               <button class="btn btn-primary btn-anterior">Anterior</button>
               <button class="btn btn-primary btn-siguiente">Siguiente</button>
             </div>
@@ -351,7 +369,11 @@
       </div>
 
       <!-- aqui iría la idea de la festividad -->
-      <div class="card" id="card-evento" style="width: 18rem">
+      <div
+        class="card col-12 col-md-8 col-lg-5 mx-auto"
+        id="card-evento"
+        style="width: 18rem"
+      >
         <img src="..." class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title text-center">Selecciona el Evento</h5>
@@ -370,16 +392,22 @@
             </h6>
             <div class="container-calendario mb-3">
               <div class="row">
-                <input id="input-fecha-intercambio" type="date" class="form-control" />
+                <input
+                  id="input-fecha-intercambio"
+                  type="date"
+                  class="form-control"
+                />
               </div>
             </div>
-            <div class="container-buttons d-flex justify-content-around">
+            <div
+              class="container-buttons d-flex justify-content-around d-flex flex-column flex-md-row justify-content-md-between gap-2 mt-3"
+            >
               <button class="btn btn-primary btn-anterior">Anterior</button>
               <button
                 class="btn btn-primary btn-siguiente"
                 id="btn-evento"
                 data-bs-toggle="modal"
-                data-bs-target="#modalResumen"
+                data-bs-target="#modalExcepciones"
               >
                 Terminar
               </button>
@@ -389,11 +417,12 @@
       </div>
 
       <!-- Si le da a listo, se despliega esta advertencia -->
-      <div class="modal fade" id="modalResumen" tabindex="-1">
+      <!-- Modal excepciones -->
+      <div class="modal fade" id="modalExcepciones" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Resúmen</h5>
+              <h5 class="modal-title">Resumen</h5>
               <button
                 type="button"
                 class="btn-close"
@@ -402,55 +431,166 @@
             </div>
 
             <div class="modal-body">
-              <p>Antes de ver el sorteo, ¿quieres ver el resumen?</p>
+              <p>¿Quieres manejar excepciones de regalos?</p>
             </div>
 
             <div class="modal-footer">
-              <button class="btn btn-secondary" data-bs-dismiss="modal">
-                No, Proceder al sorteo.
+              <button
+                type="button"
+                class="btn btn-secondary btn-siguiente"
+                data-bs-dismiss="modal"
+              >
+                No, no quiero excepciones
               </button>
 
-              <button class="btn btn-primary" data-bs-dismiss="modal">
-                Sí, Ver el resumen
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Sí, quiero manejar excepciones
               </button>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- si le da a ver el resúmen, se quita el bloqueo del scroll y manda hacia abajo a una table -->
-    <!-- En exclusión sería un botón que despliega un modal con los que tiene exclusión -->
-    <table class="custom-table">
-      <thead>
-        <tr>
-          <th scope="col"># Participante</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">Exclusión</th>
-          <th scope="col">Eliminar</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>John</td>
-          <td>Doe</td>
-          <td>@social</td>
-        </tr>
-      </tbody>
-    </table>
+      <!-- CARD EXCEPCIONES -->
+      <div class="card col-12 col-md-8 col-lg-5 mx-auto" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title text-center">Excepciones</h5>
+          <div class="mb-3">
+            <label class="form-label">Nombre:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="input-participante-excepcion"
+              disabled
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Selecciona excepción:</label>
+            <div class="container-checkbox-registros"></div>
+          </div>
+          <div
+            class="d-flex justify-content-around d-flex flex-column flex-md-row justify-content-md-between gap-2 mt-3"
+          >
+            <button
+              class="btn btn-primary mb-4 d-flex"
+              id="btn-agregar-excepciones"
+            >
+              Agregar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary mb-4 d-flex btn-siguiente"
+              data-bs-toggle="modal"
+              data-bs-target="#modalResumen"
+            >
+              Terminado
+            </button>
+          </div>
+          <div class="d-flex justify-content-around mt-3">
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="btn-excepcion-anterior"
+            >
+              ←
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="btn-excepcion-siguiente"
+            >
+              →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL RESUMEN -->
+      <div class="modal fade" id="modalResumen" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Resumen</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>¿Quieres ver un resumen de tu intercambio?</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Ver lista de participantes
+              </button>
+
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Proceder al sorteo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD RESUMEN -->
+      <div class="col-12 col-md-8 col-lg-5 mx-auto" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title text-center">Resumen</h5>
+
+          <div class="mb-3">
+            <label class="form-label">Nombre:</label>
+
+            <input
+              type="text"
+              class="form-control"
+              id="input-participante-resumen"
+              disabled
+            />
+          </div>
+
+          <div class="mb-3">
+            <div class="container-checkbox-registros"></div>
+          </div>
+
+          <div class="d-flex justify-content-around">
+            <button type="button" class="btn btn-primary">Hacer sorteo</button>
+          </div>
+
+          <div
+            class="d-flex justify-content-around mt-3 d-flex flex-column flex-md-row justify-content-md-between gap-2 mt-3"
+          >
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="btn-resumen-anterior"
+            >
+              ←
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="btn-resumen-siguiente"
+            >
+              →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- footer -->
     <footer class="container-footer">
       <section>
@@ -480,7 +620,9 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6 offset-md-3 d-flex justify-content-center">
+            <div
+              class="col-md-6 offset-md-3 d-flex column justify-content-center"
+            >
               <div class="lc-block text-center text-dark py-5 mx-2">
                 <a
                   class="text-decoration-none"
