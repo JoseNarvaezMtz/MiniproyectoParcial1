@@ -122,6 +122,11 @@ function inicializarTarjetaExcepcion(elemento) {
     }
   });
 
+  const actualizarResumen = document.getElementById("actualizar-resumen");
+  actualizarResumen.addEventListener("click", () => {
+    actualizarTarjetaResumen(document.getElementById("card-resumen"));
+  });
+
   const botonSiguiente = elemento.querySelector("#btn-excepcion-siguiente");
   botonSiguiente.addEventListener("click", () => {
     const participantes = obtenerParticipantes();
