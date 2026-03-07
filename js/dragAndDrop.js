@@ -1,9 +1,29 @@
 //FESTIVIDADES PARA EL DRAG & DROP
 const FESTIVIDADES = {
-  f1: { nombre: "Navidad", tema: "theme-navidad", color: "#165B33", fecha: "2026-12-25" },
-  f2: { nombre: "Halloween", tema: "theme-halloween", color: "#FF6B00", fecha: "2026-10-31" },
-  f3: { nombre: "San Valentín", tema: "theme-valentin", color: "#C0392B", fecha: "2027-02-14" },
-  f4: { nombre: "Año Nuevo", tema: "theme-anonuevo", color: "#1A1A2E", fecha: "2026-12-31" },
+  f1: {
+    nombre: "Navidad",
+    tema: "theme-Navidad",
+    color: "#165B33",
+    fecha: "2026-12-25",
+  },
+  f2: {
+    nombre: "Halloween",
+    tema: "theme-Halloween",
+    color: "#FF6B00",
+    fecha: "2026-10-31",
+  },
+  f3: {
+    nombre: "San Valentín",
+    tema: "theme-San-Valentin",
+    color: "#C0392B",
+    fecha: "2027-02-14",
+  },
+  f4: {
+    nombre: "Año Nuevo",
+    tema: "theme-Ano-Nuevo",
+    color: "#1A1A2E",
+    fecha: "2026-12-31",
+  },
 };
 
 let festividadArrastrada = null;
@@ -62,20 +82,30 @@ function crearZonaDrop() {
   });
 }
 
+function normalizarTema(texto) {
+  return texto
+    .normalize("NFD") // Separa letras de sus acentos
+    .replace(/[\u0300-\u036f]/g, "") // Elimina los acentos
+    .trim()
+    .replace(/\s+/g, "-");
+}
+
 function guardarFestividad() {
   let label = document.getElementById("zona-festividad");
-    const festividades = Array.from(FESTIVIDADES).map(el => el.getAttribute('nombre'));
+  const festividades = Array.from(FESTIVIDADES).map((el) =>
+    el.getAttribute("nombre"),
+  );
 
-    if (festividades.includes(label.value)) {
-      setFestividad({ id: festividadArrastrada, ...datos });
-    } else {
-      setFestividad({
-        id: 'fn',
-        nombre: label.value, 
-        tema: `theme-${label.value}`,
-        color: '#413f3f05',
-      });
-    }
+  if (festividades.includes(label.value)) {
+    setFestividad({ id: festividadArrastrada, ...datos });
+  } else {
+    setFestividad({
+      id: "fn",
+      nombre: label.value,
+      tema: `theme-${normalizarTema(label.value)}`,
+      color: "#413f3f05",
+    });
+  }
 }
 
 //Funcion para inicializar los canvas de drag
@@ -125,13 +155,13 @@ function actualizarLabel(datos) {
 }
 
 function aplicarFecha(fecha) {
-  const elemento = document.getElementById('input-fecha-intercambio');
+  const elemento = document.getElementById("input-fecha-intercambio");
   elemento.value = fecha;
 }
 
 function inicializarFecha() {
-  const elemento = document.getElementById('input-fecha-intercambio');
-  elemento.value = new Date().toISOString().split('T')[0];
+  const elemento = document.getElementById("input-fecha-intercambio");
+  elemento.value = new Date().toISOString().split("T")[0];
 }
 
 function inicializarLabel() {
@@ -178,10 +208,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function aplicarTema(tema) {
   document.body.classList.remove(
-    "theme-navidad",
-    "theme-halloween",
-    "theme-valentin",
-    "theme-anonuevo",
+    "theme-Navidad",
+    "theme-Halloween",
+    "theme-San-Valentin",
+    "theme-Ano-Nuevo",
   );
 
   document.body.classList.add(tema);
