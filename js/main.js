@@ -240,6 +240,9 @@ function actualizarTarjetaResumen(elemento) {
 //ASIGNACION A BOTONES Y DEMAS
 const botonIntercambio = document.getElementById('btn-evento');
 botonIntercambio.addEventListener('click', () => {
+
+    guardarFestividad();
+
     const nombreOrg = inputNombreOrg.value;
     const fecha = inputFecha.value;
     const presupuesto = inputPresupuesto.value;
@@ -248,6 +251,7 @@ botonIntercambio.addEventListener('click', () => {
     const nombreEve = festividad ? festividad.nombre : "";
 
     setDatosEvento(nombreOrg, nombreEve, fecha, presupuesto);
+    actualizarNavbar(festividad);
     actualizarTarjetaExcepcion(document.getElementById('card-excepciones'));
     actualizarTarjetaResumen(document.getElementById('card-resumen'));
 });

@@ -1,9 +1,9 @@
 //FESTIVIDADES PARA EL DRAG & DROP
 const FESTIVIDADES = {
-  f1: { nombre: "Navidad", tema: "theme-navidad", color: "#165B33" },
-  f2: { nombre: "Halloween", tema: "theme-halloween", color: "#FF6B00" },
-  f3: { nombre: "San Valentín", tema: "theme-valentin", color: "#C0392B" },
-  f4: { nombre: "Año Nuevo", tema: "theme-anonuevo", color: "#1A1A2E" },
+  f1: { nombre: "Navidad", tema: "theme-navidad", color: "#165B33", fecha: "2026-12-25" },
+  f2: { nombre: "Halloween", tema: "theme-halloween", color: "#FF6B00", fecha: "2026-10-31" },
+  f3: { nombre: "San Valentín", tema: "theme-valentin", color: "#C0392B", fecha: "2027-02-14" },
+  f4: { nombre: "Año Nuevo", tema: "theme-anonuevo", color: "#1A1A2E", fecha: "2026-12-31" },
 };
 
 let festividadArrastrada = null;
@@ -56,8 +56,26 @@ function crearZonaDrop() {
 
     aplicarTema(datos.tema);
 
-    setFestividad({ id: festividadArrastrada, ...datos });
+    aplicarFecha(datos.fecha);
+
+    guardarFestividad();
   });
+}
+
+function guardarFestividad() {
+  let label = document.getElementById("zona-festividad");
+    const festividades = Array.from(FESTIVIDADES).map(el => el.getAttribute('nombre'));
+
+    if (festividades.includes(label.value)) {
+      setFestividad({ id: festividadArrastrada, ...datos });
+    } else {
+      setFestividad({
+        id: 'fn',
+        nombre: label.value, 
+        tema: `theme-${label.value}`,
+        color: '#413f3f05',
+      });
+    }
 }
 
 //Funcion para inicializar los canvas de drag
@@ -103,11 +121,12 @@ function actualizarNavbar(datos) {
 function actualizarLabel(datos) {
   let label = document.getElementById("zona-festividad");
 
-  label.innerHTML = `
-        <strong style="color:${datos.color}; margin-left:8px; font-size:1rem">
-            ${datos.nombre}
-        </strong>
-    `;
+  label.value = datos.nombre;
+}
+
+function aplicarFecha(fecha) {
+  const elemento = document.getElementById('input-fecha-intercambio');
+  elemento.value = fecha;
 }
 
 function inicializarLabel() {
@@ -127,11 +146,7 @@ function inicializarLabel() {
         margin-bottom: 8px;
         min-height: 60px;
     `;
-  zona.innerHTML = `
-        <strong style="color:${guardada.color}; margin-left:8px; font-size:1rem">
-            ${guardada.nombre}
-        </strong>
-    `;
+  zona.value = guardada.nombre;
 
   form.insertAdjacentElement("beforebegin", zona);
 }
@@ -149,11 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const zona = document.getElementById("zona-festividad");
     if (zona) {
-      zona.innerHTML = `
-                <strong style="color:${guardada.color}; margin-left:8px; font-size:1rem">
-                    ${guardada.nombre}
-                </strong>
-            `;
+      zona.value = guardada.nombre;
     }
     aplicarTema(guardada.tema);
   }
