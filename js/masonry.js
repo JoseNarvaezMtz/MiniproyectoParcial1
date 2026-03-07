@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!parejas) {
     window.location.href =
-      "https://josenarvaezmtz.github.io/MiniproyectoParcial1/";
+      "https://josenarvaezmtz.github.io/MiniproyectoParcial1/index.html";
     return;
   }
 

@@ -214,7 +214,8 @@ function inicializarTarjetaResumen(elemento) {
     }
 
     setParejas(parejas);
-    window.location.href = "https://josenarvaezmtz.github.io/sorteo.html";
+    window.location.href =
+      "https://josenarvaezmtz.github.io/MiniproyectoParcial1/sorteo.html";
   });
 
   document
@@ -230,7 +231,8 @@ function inicializarTarjetaResumen(elemento) {
       }
 
       setParejas(parejas);
-      window.location.href = "https://josenarvaezmtz.github.io/sorteo.html";
+      window.location.href =
+        "https://josenarvaezmtz.github.io/MiniproyectoParcial1/sorteo.html";
     });
 }
 
