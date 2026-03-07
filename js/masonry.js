@@ -22,8 +22,8 @@ function render(data) {
     card.style.height = randomHeight() + "px";
 
     card.innerHTML = `
-      <h5>${r.de}</h5>
-      <p>le regala a <strong>${r.para}</strong></p>
+      <h5>${r.nombre}</h5>
+      <p>le regala a <strong>${r.objetivo}</strong></p>
     `;
 
     div.appendChild(card);
