@@ -114,6 +114,7 @@ function inicializarTarjetaExcepcion(elemento) {
             alert(resultado.razon);
             generarLista(elemento.querySelector('.container-checkbox-registros'));
         } else {
+            actualizarTarjetaResumen(document.getElementById('card-resumen'));
             idEtiqueta=0;
         }
     });
@@ -253,7 +254,7 @@ botonIntercambio.addEventListener('click', () => {
     setDatosEvento(nombreOrg, nombreEve, fecha, presupuesto);
     actualizarNavbar(festividad);
     actualizarTarjetaExcepcion(document.getElementById('card-excepciones'));
-    actualizarTarjetaResumen(document.getElementById('card-resumen'));
+
 });
 
 document.addEventListener('DOMContentLoaded', () => {

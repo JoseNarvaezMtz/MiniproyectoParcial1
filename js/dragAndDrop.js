@@ -129,6 +129,11 @@ function aplicarFecha(fecha) {
   elemento.value = fecha;
 }
 
+function inicializarFecha() {
+  const elemento = document.getElementById('input-fecha-intercambio');
+  elemento.value = new Date().toISOString().split('T')[0];
+}
+
 function inicializarLabel() {
   const card5 = document.getElementById("card-evento");
   const form = card5.querySelector("form");
@@ -156,6 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
   crearZonaDrop();
   inicializarDrag();
   inicializarLabel();
+  inicializarFecha();
 
   // Si ya hay festividad, la restauramos pa que se vea el localStorage
   const guardada = getFestividad();
