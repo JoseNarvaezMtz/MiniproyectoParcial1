@@ -5,7 +5,6 @@
     elemento HTML en especifico.
 */
 
-
 //FUNCION PRINCIPAL
 function realizarIntercambio() {
     //Datos
@@ -56,33 +55,3 @@ function realizarIntercambio() {
 
     return parejas;
 }
-
-
-// function realizarIntercambio() {
-//     const listas = JSON.parse(localStorage.getItem('listas'));
-//     const participantes = JSON.parse(localStorage.getItem('participantes'));
-//     const lista = [...participantes];
-
-//     const parejas = [];
-
-//     const entradas = participantes
-//         .map(p => ({ nombre: p, validos: listas[p] })) //p = Participante
-//         .sort((a, b) => a.validos.length - b.validos.length);
-//         // a y b son las pocisiones de primero y segundo
-
-//     entradas.forEach(participante => {
-//         while (true) {
-//             const id = Math.floor(Math.random() * participante.validos.length);
-
-//             if (lista.includes(participante.validos[id])) {
-//                 parejas.push({nombre: participante.nombre, objetivo: participante.validos[id]});
-//                 lista.splice(lista.indexOf(participante.validos[id]), 1);
-//                 break;
-//             } else {
-//                 participante.validos = participante.validos.filter(v => v !== participante.validos[id]);
-//             }
-//         }
-//     });
-
-//     return parejas;
-// }
