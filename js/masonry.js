@@ -38,13 +38,14 @@ function render(data) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const parejas = getParejas();
+document.addEventListener("DOMContentLoaded", () => {
+  const parejas = getParejas();
 
-    if (!parejas) {
-        window.location.href = '/index.html';
-        return;
-    }
+  if (!parejas) {
+    window.location.href =
+      "https://josenarvaezmtz.github.io/MiniproyectoParcial1/";
+    return;
+  }
 
-    render(parejas);
+  render(parejas);
 });
